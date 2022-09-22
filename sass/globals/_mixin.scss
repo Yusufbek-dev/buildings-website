@@ -1,0 +1,37 @@
+@use  "./colors" as *;
+@mixin adjust {
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+}
+
+@mixin center {
+  margin-left:50%;
+  transform: translateX(-50%);
+}
+@mixin  before {
+      content: "";
+      position: absolute;
+      left: -90px;
+      width: 20px;
+      height: 90px;
+      background-color: $primary-color;
+}
+
+// breakpoints
+
+@mixin tablet {
+  @media (max-width:1024px) {
+    @content;
+  }
+}
+@mixin mobile {
+  @media (max-width:500px) {
+    @content;
+  }
+}
+@mixin min-mobile {
+  @media (max-width:400px) {
+    @content;
+  }
+}
